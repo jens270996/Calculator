@@ -21,5 +21,18 @@ namespace CalculatorTest
             
             Assert.That(uut.Add(5, 9),Is.EqualTo(14));
         }
+
+        [Test]
+
+        public void Power_ExponentOfZero_IsOne()
+        {
+            Assert.That(uut.Power(5,0),Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Power_PowerOfOne_IsOne()
+        {
+            Assert.That(uut.Power(1,9),Is.EqualTo(1));
+        }
     }
 }
