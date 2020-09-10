@@ -34,5 +34,7 @@ namespace CalculatorTest
         {
             Assert.That(uut.Power(1,9),Is.EqualTo(1));
         }
+
+
     }
 }
