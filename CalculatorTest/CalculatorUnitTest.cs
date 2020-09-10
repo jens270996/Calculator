@@ -36,6 +36,12 @@ namespace CalculatorTest
         }
 
         [Test]
+        public void Power_PowerOf()
+        {
+
+        }
+
+        [Test]
         public void Accumulator_CalculationsWithPositiveIntegers_IsLatestResult()
         {
             uut.Add(5, 6);
@@ -82,5 +88,6 @@ namespace CalculatorTest
         {
             Assert.That(uut.Divide(-97.38, 84.21), Is.EqualTo(-1.1563947275).Within(0.0000001));
         }
+
     }
 }
