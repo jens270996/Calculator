@@ -1,9 +1,12 @@
+using System;
 using NUnit.Framework;
 using Calculatorspace;
 
 namespace CalculatorTest
 {
+   
     public class Tests
+
     {
         Calculator uut;
 
@@ -40,5 +43,44 @@ namespace CalculatorTest
             Assert.That(uut.Accumulator, Is.EqualTo(3));
         }
 
+        [Test]
+
+        public void Divide_DivisionByZero_ThrowsException()
+        {
+            Assert.That(()=>uut.Divide(5.5,0),Throws.TypeOf<DivideByZeroException>());
+
+        }
+        [Test]
+        public void Divide_DivisionByZero_AccumulatorIsNaN()
+        {
+            try
+            {
+                uut.Divide(5.5, 0);
+            }
+            catch (Exception e)
+            {
+                
+            }
+            Assert.That(uut.Accumulator,Is.EqualTo(Double.NaN));
+        }
+
+        [Test]
+
+        public void Divide_DividentIsZero_EqualsZero()
+        {
+            uut.Divide(0, 0.00094);
+            Assert.That(uut.Accumulator,Is.EqualTo(0));
+        }
+        [Test]
+        public void Divide_DividentAndDivisorIsNegative_PositiveResult()
+        {
+            Assert.That(uut.Divide(-97.38,-84.21),Is.EqualTo(1.1563947275).Within(0.0000001));
+        }
+
+        [Test]
+        public void Divide_DividentIsNegative_NegativeResult()
+        {
+            Assert.That(uut.Divide(-97.38, 84.21), Is.EqualTo(-1.1563947275).Within(0.0000001));
+        }
     }
 }

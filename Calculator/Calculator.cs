@@ -7,7 +7,7 @@ namespace Calculatorspace
         {
             public Calculator()
             {
-                Accumulator = Double.NaN;
+                Accumulator = 0;
             }
 
             public double Add(double a, double b)
