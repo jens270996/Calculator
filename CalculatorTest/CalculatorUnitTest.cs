@@ -73,6 +73,31 @@ namespace CalculatorTest
             Assert.That(uut.Subtract(7.48), Is.EqualTo(-7.48).Within(0.000001));
         }
 
+        //Test of accumulator Power:
+
+        [Test]
+
+        public void AcuPower_5pow3_Is125()
+        {
+            uut.Add(5);
+            Assert.That(uut.Power(3),Is.EqualTo(125));
+        }
+
+        [Test]
+        public void Clear_Is0()
+        {
+            uut.Add(5);
+            uut.Clear();
+            Assert.That(uut.Accumulator,Is.EqualTo(0));
+        }
+
+        [Test]
+        public void AcuDiv_5div2_Is2p5()
+        {
+            uut.Add(5);
+            Assert.That(uut.Divide(2), Is.EqualTo(2.5));
+        }
+
 
         //Tests of multiply
 

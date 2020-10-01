@@ -43,7 +43,7 @@ namespace Calculatorspace
                 return Accumulator=Math.Pow(x, exp);
             }
 
-            double Power(double exp)
+            public double Power(double exp)
             {
                 return Power(Accumulator, exp);
             }
