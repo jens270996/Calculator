@@ -67,6 +67,7 @@ namespace CalculatorTest
         }
 
         //Test of accumulator subtract:
+        [Test]
         public void AcuSubtract_7P48_IsNegative7p48()
         {
             Assert.That(uut.Subtract(7.48), Is.EqualTo(-7.48).Within(0.000001));
